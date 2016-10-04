@@ -5,4 +5,5 @@ class FormBir < ActiveRecord::Base
   has_one :user
   has_one :gonullu
   has_one :option_destek_aliyor
+  has_one :option_iletisime_gecen
 end
