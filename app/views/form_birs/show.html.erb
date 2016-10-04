@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Basvuran:</strong>
+  <%= @form_bir.basvuran %>
+</p>
+
+<p>
+  <strong>Ilk basvuru tarihi:</strong>
+  <%= @form_bir.ilk_basvuru_tarihi %>
+</p>
+
+<p>
+  <strong>Notlar:</strong>
+  <%= @form_bir.notlar %>
+</p>
+
+<p>
+  <strong>Mc siginaginda kaliyor:</strong>
+  <%= @form_bir.mc_siginaginda_kaliyor %>
+</p>
+
+<p>
+  <strong>Gonullu:</strong>
+  <%= @form_bir.gonullu %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @form_bir.user %>
+</p>
+
+<%= link_to 'Edit', edit_form_bir_path(@form_bir) %> |
+<%= link_to 'Back', form_birs_path %>

@@ -1,0 +1,16 @@
+<%= simple_form_for(@form_bir) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :basvuran %>
+    <%= f.input :ilk_basvuru_tarihi %>
+    <%= f.input :notlar %>
+    <%= f.input :mc_siginaginda_kaliyor %>
+    <%= f.association :gonullu %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing form_birs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Basvuran</th>
+      <th>Ilk basvuru tarihi</th>
+      <th>Notlar</th>
+      <th>Mc siginaginda kaliyor</th>
+      <th>Gonullu</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @form_birs.each do |form_bir| %>
+      <tr>
+        <td><%= form_bir.basvuran %></td>
+        <td><%= form_bir.ilk_basvuru_tarihi %></td>
+        <td><%= form_bir.notlar %></td>
+        <td><%= form_bir.mc_siginaginda_kaliyor %></td>
+        <td><%= form_bir.gonullu %></td>
+        <td><%= form_bir.user %></td>
+        <td><%= link_to 'Show', form_bir %></td>
+        <td><%= link_to 'Edit', edit_form_bir_path(form_bir) %></td>
+        <td><%= link_to 'Destroy', form_bir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form bir', new_form_bir_path %>

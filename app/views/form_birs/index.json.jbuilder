@@ -1,0 +1,1 @@
+json.array! @form_birs, partial: 'form_birs/form_bir', as: :form_bir

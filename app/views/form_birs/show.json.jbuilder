@@ -1,0 +1,1 @@
+json.partial! "form_birs/form_bir", form_bir: @form_bir
