@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  basvuran_id: 
+  ilk_basvuru_tarihi: 2016-10-04
+  notlar: MyText
+  mc_siginaginda_kaliyor: false
+  gonullu_id: 
+  user_id: 
+
+two:
+  basvuran_id: 
+  ilk_basvuru_tarihi: 2016-10-04
+  notlar: MyText
+  mc_siginaginda_kaliyor: false
+  gonullu_id: 
+  user_id: 
