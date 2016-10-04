@@ -1,35 +1,40 @@
-<h1>Listing form_birs</h1>
-
-<table>
+<%- model_class = FormBir -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FormBir %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Basvuran</th>
-      <th>Ilk basvuru tarihi</th>
-      <th>Notlar</th>
-      <th>Mc siginaginda kaliyor</th>
-      <th>Gonullu</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:ilk_basvuru_tarihi) %></th>
+      <th><%= model_class.human_attribute_name(:notlar) %></th>
+      <th><%= model_class.human_attribute_name(:mc_siginaginda_kaliyor) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @form_birs.each do |form_bir| %>
       <tr>
-        <td><%= form_bir.basvuran %></td>
+        <td><%= form_bir.id %></td>
         <td><%= form_bir.ilk_basvuru_tarihi %></td>
         <td><%= form_bir.notlar %></td>
         <td><%= form_bir.mc_siginaginda_kaliyor %></td>
-        <td><%= form_bir.gonullu %></td>
-        <td><%= form_bir.user %></td>
-        <td><%= link_to 'Show', form_bir %></td>
-        <td><%= link_to 'Edit', edit_form_bir_path(form_bir) %></td>
-        <td><%= link_to 'Destroy', form_bir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l form_bir.created_at, format: :long %></td>
+        <td>
+          <%= link_to form_bir_path(form_bir), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to form_bir_path(form_bir), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Form bir', new_form_bir_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_form_bir_path,
+            :class => 'btn btn-primary' %>

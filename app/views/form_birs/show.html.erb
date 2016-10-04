@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = FormBir -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FormBir %></h1>
+</div>
 
-<p>
-  <strong>Basvuran:</strong>
-  <%= @form_bir.basvuran %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ilk_basvuru_tarihi) %></dt>
+      <dd><pre class="prettyprint"><%= @form_bir.ilk_basvuru_tarihi %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notlar) %></dt>
+      <dd><pre class="prettyprint"><%= @form_bir.notlar %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mc_siginaginda_kaliyor) %></dt>
+      <dd><pre class="prettyprint"><%= @form_bir.mc_siginaginda_kaliyor %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Ilk basvuru tarihi:</strong>
-  <%= @form_bir.ilk_basvuru_tarihi %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              form_birs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_form_bir_path(@form_bir), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              form_bir_path(@form_bir),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Notlar:</strong>
-  <%= @form_bir.notlar %>
-</p>
-
-<p>
-  <strong>Mc siginaginda kaliyor:</strong>
-  <%= @form_bir.mc_siginaginda_kaliyor %>
-</p>
-
-<p>
-  <strong>Gonullu:</strong>
-  <%= @form_bir.gonullu %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @form_bir.user %>
-</p>
-
-<%= link_to 'Edit', edit_form_bir_path(@form_bir) %> |
-<%= link_to 'Back', form_birs_path %>

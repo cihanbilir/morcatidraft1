@@ -1,16 +1,28 @@
-<%= simple_form_for(@form_bir) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :basvuran %>
-    <%= f.input :ilk_basvuru_tarihi %>
-    <%= f.input :notlar %>
-    <%= f.input :mc_siginaginda_kaliyor %>
-    <%= f.association :gonullu %>
-    <%= f.association :user %>
+<%= form_for @form_bir, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :ilk_basvuru_tarihi, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :ilk_basvuru_tarihi, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :notlar, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :notlar, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :mc_siginaginda_kaliyor, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :mc_siginaginda_kaliyor, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  form_birs_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
