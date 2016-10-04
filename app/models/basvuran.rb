@@ -3,4 +3,5 @@ class Basvuran < ActiveRecord::Base
   belongs_to :user
   has_one :form_bir
   validates_formatting_of :telefon, using: :us_phone
+  validates_formatting_of :mail, using: :email
 end
